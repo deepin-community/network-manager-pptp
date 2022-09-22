@@ -1,0 +1,3 @@
+usr/lib/*/NetworkManager/libnm-vpn-plugin-pptp-editor.so
+usr/lib/NetworkManager/nm-pptp-auth-dialog
+usr/share/metainfo/network-manager-pptp.metainfo.xml

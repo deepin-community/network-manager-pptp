@@ -1,0 +1,602 @@
+network-manager-pptp (1.2.8-4) unstable; urgency=medium
+
+  * Remove obsolete debian/network-manager-pptp.maintscript
+  * Drop obsolete Breaks/Replaces
+  * Set upstream metadata fields: Bug-Submit, Bug-Database, Repository,
+    Repository-Browse
+  * Bump Standards-Version to 4.6.0
+  * Bump debhelper-compat to 13
+  * Drop override for dh_missing.
+    No longer needed with debhelper-compat 13.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 25 Aug 2021 11:33:12 +0200
+
+network-manager-pptp (1.2.8-3) unstable; urgency=medium
+
+  * Update debian/copyright
+  * Remove --as-needed from linker flags and dh_autoreconf
+  * Remove unused dh_makeshlibs override
+  * Bump Standards-Version to 4.5.0
+  * Use debhelper-compat (= 12) Build-Depends and drop debian/compat
+  * Use /usr/share/metainfo for AppData files
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 05 May 2020 14:09:43 +0200
+
+network-manager-pptp (1.2.8-2) unstable; urgency=medium
+
+  * Move D-Bus policy file to /usr/share/dbus-1/system.d/
+  * Remove obsolete conffile /etc/dbus-1/system.d/nm-pptp-service.conf on
+    upgrades
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 27 Nov 2018 14:46:53 +0100
+
+network-manager-pptp (1.2.8-1) unstable; urgency=medium
+
+  * New upstream version 1.2.8
+  * Bump Standards-Version to 4.2.1
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 08 Oct 2018 06:15:40 +0200
+
+network-manager-pptp (1.2.6-2) unstable; urgency=medium
+
+  * Drop obsolete network-manager-dev Build-Depends
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 11 Apr 2018 15:24:19 +0200
+
+network-manager-pptp (1.2.6-1) unstable; urgency=medium
+
+  * New upstream version 1.2.6
+  * Set Rules-Requires-Root to no
+  * Update Vcs-* to point to https://salsa.debian.org
+  * Stop installing nm-vpnc-dialog.ui
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 08 Apr 2018 16:38:46 +0200
+
+network-manager-pptp (1.2.4-5) unstable; urgency=medium
+
+  * Upload to unstable
+  * Switch to dh_missing and abort on uninstalled files
+  * Bump debhelper compat level to 11
+  * Bump Standards-Version to 4.1.3
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 21 Jan 2018 21:58:38 +0100
+
+network-manager-pptp (1.2.4-4) experimental; urgency=medium
+
+  * Drop obsolete debian/network-manager-pptp.preinst
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 13 May 2017 00:12:33 +0200
+
+network-manager-pptp (1.2.4-3) experimental; urgency=medium
+
+  * Switch URLs to https
+  * Drop obsolete Build-Depends on libdbus-glib-1-dev.
+    It is no longer required after the port to GDBus.
+  * Stop building with libnm-glib compat support
+  * Remove obsolete nm-pptp-service.name conffile on upgrades
+  * Use architecture.mk provided by dpkg-dev to retrieve DEB_HOST_MULTIARCH
+  * Use --as-needed to avoid unnecessary shlibs dependencies
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 12 May 2017 23:57:01 +0200
+
+network-manager-pptp (1.2.4-2) unstable; urgency=medium
+
+  * Update Vcs-* according to the latest recommendation
+  * Install AppData file
+  * Move libnm-vpn-plugin-pptp.so and translations into main package.
+    This plugin is used by nmcli and doesn't have any GTK dependencies.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 25 Jan 2017 20:15:51 +0100
+
+network-manager-pptp (1.2.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump debhelper compat level to 10.
+  * Bump Build-Depends on libsecret-dev to (>= 0.18) as per configure.ac.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 04 Oct 2016 19:49:08 +0200
+
+network-manager-pptp (1.2.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump network-manager related build dependencies to >= 1.2.0.
+  * Add Depends on network-manager (>= 1.2.0) to network-manager-pptp. This
+    ensures we have a version that can handle plugin paths which are not
+    absolute. (Closes: #824054)
+  * Bump Standards-Version to 3.9.8.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 11 May 2016 19:36:53 +0200
+
+network-manager-pptp (1.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 23 Apr 2016 00:44:17 +0200
+
+network-manager-pptp (1.1.93-1) unstable; urgency=medium
+
+  * New upstream release (1.2 rc1).
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 06 Apr 2016 01:23:04 +0200
+
+network-manager-pptp (1.1.92-1) unstable; urgency=medium
+
+  * New upstream release (1.2 beta3).
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 31 Mar 2016 15:29:10 +0200
+
+network-manager-pptp (1.1.91-1) unstable; urgency=medium
+
+  * New upstream release (1.2 beta2).
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 02 Mar 2016 03:12:51 +0100
+
+network-manager-pptp (1.1.90-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Bump Standards-Version to 3.7.0.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 04 Feb 2016 06:27:05 +0100
+
+network-manager-pptp (1.1.90-1) experimental; urgency=medium
+
+  * New upstream release (1.2 beta1).
+  * Update Build-Depends
+    - Bump network-manager-dev, libnm-util-dev, libnm-glib-dev,
+      libnm-glib-vpn-dev and libnm-gtk-dev to (>= 1.1.0).
+    - Add libnm-dev (>= 1.1.0) and libnma-dev (>= 1.1.0).
+  * Install nm-pptp-service.name for the new, libnm based plugin.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 22 Jan 2016 01:02:55 +0100
+
+network-manager-pptp (1.0.8-2) unstable; urgency=medium
+
+  [ Chris Boot ]
+  * Use dh_ppp to generate Depends on ppp and to locate the ppp plugins
+    directory. (Closes: #805566)
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 05 Dec 2015 22:18:43 +0100
+
+network-manager-pptp (1.0.8-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 20 Nov 2015 19:02:10 +0100
+
+network-manager-pptp (1.0.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Build-Depends on libnm-gtk-dev to (>= 1.0.5) as per configure.ac.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 28 Aug 2015 17:41:50 +0200
+
+network-manager-pptp (1.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 05 May 2015 22:34:26 +0200
+
+network-manager-pptp (1.0.0-2) unstable; urgency=medium
+
+  * Update Vcs-Git and Vcs-Browser to use the canonical Alioth URLs.
+  * Update Vcs-Browser URL to use cgit and https.
+  * Update Homepage URL to use https.
+  * Upload to unstable.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 27 Apr 2015 18:13:33 +0200
+
+network-manager-pptp (1.0.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.6. No further changes.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 22 Jan 2015 19:43:34 +0100
+
+network-manager-pptp (0.9.10.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update Build-Depends as per configure.ac.
+  * Drop obsolete --with-gtkver configure switch.
+  * Exclude libtool .la files from list-missing.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 10 Jul 2014 07:46:57 +0200
+
+network-manager-pptp (0.9.8.4-3) unstable; urgency=medium
+
+  * Build against ppp 2.4.6 and tighten dependencies accordingly.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 15 Apr 2014 02:41:32 +0200
+
+network-manager-pptp (0.9.8.4-2) unstable; urgency=medium
+
+  * Bump Standards-Version to 3.9.5.
+  * Bump debhelper compatibility level to 9.
+  * Fix install paths to be multi-arch aware.
+  * Drop dbus reload from postinst. The dbus package uses a file trigger
+    nowadays to automatically reload its configuration.
+  * Rely on dh v9 to call dpkg-buildflags.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 03 Apr 2014 23:35:22 +0200
+
+network-manager-pptp (0.9.8.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove 01-fix-path-to-connection-editor-plugin-in-service-file.patch,
+    merged upstream.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 13 Sep 2013 19:57:17 +0200
+
+network-manager-pptp (0.9.8.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump network-manager Build-Depends to (>= 0.9.8).
+  * Fix path to connection-editor plugin in service file. Patch cherry-picked
+    from upstream Git.
+  * Use dh-autoreconf to update the build system.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 11 Jun 2013 00:27:10 +0200
+
+network-manager-pptp (0.9.8.0-2) unstable; urgency=low
+
+  * Mark binary packages as linux-any.
+  * Upload to unstable.
+  * Bump Standards-Version to 3.9.4. No further changes.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 06 May 2013 18:07:17 +0200
+
+network-manager-pptp (0.9.8.0-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 21 Feb 2013 15:14:02 +0100
+
+network-manager-pptp (0.9.6.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Remove Enrico Tassi from Uploaders on his request. Thank you Enrico for
+    your work!
+  * Bump Build-Depends on libnm-*-dev and network-manager-dev to (>= 0.9.6).
+  * Use --list-missing to show uninstalled files.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 27 Oct 2012 00:16:16 +0200
+
+network-manager-pptp (0.9.4.0-2) unstable; urgency=low
+
+  * Fix Upstream-Name and Source in debian/copyright.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 24 Mar 2012 23:50:06 +0100
+
+network-manager-pptp (0.9.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fix versioned Build-Depends on dpkg-dev.
+    The buildflags.mk snippet was added in version 1.16.1, not 1.6.1.
+  * Bump Build-Depends on libnm-*-dev and network-manager-dev to (>= 0.9.4).
+  * Drop Build-Depends on libgconf2-dev.
+  * Update debian/copyright using the machine-readable copyright format 1.0.
+  * Bump Standards-Version to 3.9.3.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 24 Mar 2012 23:39:59 +0100
+
+network-manager-pptp (0.9.2.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control
+    - Bump Build-Depends on libnm-*-dev and network-manager-dev to (>= 0.9.2).
+  * Enable default hardening options from dpkg-buildflags.
+    - Use buildflags.mk snippet in debian/rules.
+    - Add Build-Depends on dpkg-dev (>= 1.6.1).
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 12 Nov 2011 06:22:39 +0100
+
+network-manager-pptp (0.9.0-3) unstable; urgency=low
+
+  * debian/watch: Track .xz tarballs.
+  * Build against GTK 3.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 16 Oct 2011 09:12:23 +0200
+
+network-manager-pptp (0.9.0-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 16 Sep 2011 21:32:43 +0200
+
+network-manager-pptp (0.9.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/control
+    - Bump Build-Depends on libnm-*-dev and network-manager-dev to (>= 0.9).
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 24 Aug 2011 15:31:30 +0200
+
+network-manager-pptp (0.8.999-1) experimental; urgency=low
+
+  * New upstream release (0.9 rc2).
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 04 May 2011 23:58:04 +0200
+
+network-manager-pptp (0.8.998-1) experimental; urgency=low
+
+  * New upstream release (0.9 rc1).
+  * debian/control
+    - Bump Build-Depends on libnm-*-dev and network-manager-dev to
+      (>= 0.8.998).
+    - Bump Build-Depends on libgtk2.0-dev to (>= 2.20).
+  * debian/rules
+    - Build against GTK+ version 2.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 03 May 2011 01:35:53 +0200
+
+network-manager-pptp (0.8.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control
+    - Bump Build-Depends on libnm-*-dev and network-manager-dev to (>= 0.8.4).
+    - Update package descriptions.
+    - Bump Standards-Version to 3.9.2. No further changes.
+  * debian/watch
+    - Switch to bzip2.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 21 Apr 2011 17:22:08 +0200
+
+network-manager-pptp (0.8.3.995-1) unstable; urgency=low
+
+  * New upstream release (0.8.4 beta1).
+  * Bump debhelper compatibility level to 8.
+  * debian/control
+    - Drop Build-Depends on libglade2-dev, converted to GtkBuilder.
+    - Bump Build-Depends on libnm-*-dev and network-manager-dev to
+      (>= 0.8.3.995).
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 19 Mar 2011 10:40:53 +0100
+
+network-manager-pptp (0.8.2-3) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 07 Feb 2011 01:30:12 +0100
+
+network-manager-pptp (0.8.2-2) experimental; urgency=low
+
+  * Switch from cdbs to dh
+    - Drop Build-Depends on cdbs.
+    - Bump Build-Depends on debhelper to (>= 7.0.50~) for override targets.
+    - Convert debian/rules to use dh.
+    - Add debian/network-manager-pptp.docs.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 22 Dec 2010 04:48:01 +0100
+
+network-manager-pptp (0.8.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update Vcs-* fields: Move packaging from svn to git.
+  * debian/control
+    - Bump Build-Depends on libnm-* packages to (>= 0.8.2).
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 18 Dec 2010 11:58:40 +0100
+
+network-manager-pptp (0.8.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Switch to source format 3.0 (quilt).
+    - Add debian/source/format.
+    - Drop Build-Depends on quilt.
+    - Remove /usr/share/cdbs/1/rules/patchsys-quilt.mk from debian/rules.
+    - Remove debian/README.source.
+  * Build against ppp 2.4.5. (Closes: #589695)
+    - Bump Build-Depends on ppp-dev to (>= 2.4.5).
+    - Add Depends on ppp (>= 2.4.5), ppp (<< 2.4.6) to avoid future breakage
+      when the plugin dir changes again.
+    - Set --with-pppd-plugin-dir configure option to /usr/lib/pppd/2.4.5.
+  * debian/control
+    - Bump Build-Depends on libnm-* packages to (>= 0.8.1).
+    - Bump Standards-Version to 3.9.1. No further changes.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 27 Jul 2010 14:47:47 +0200
+
+network-manager-pptp (0.8-2) unstable; urgency=low
+
+  * debian/control
+    - Remove Recommends: network-manager-pptp-gnome from network-manager-pptp.
+      Otherwise installing network-manager-kde will pull half of GNOME as
+      Recommends are installed by default nowadays.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 17 Mar 2010 20:19:51 +0100
+
+network-manager-pptp (0.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control
+    - Bump Build-Depends on libnm-* packages to (>= 0.8).
+    - Bump Standards-Version to 3.8.4. No further changes.
+  * debian/network-manager-pptp-gnome.install
+    - Remove .desktop file and icons, no longer installed upstream.
+      (Closes: #489288)
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 22 Feb 2010 19:11:15 +0100
+
+network-manager-pptp (0.7.999-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 27 Jan 2010 01:00:27 +0100
+
+network-manager-pptp (0.7.999-1) experimental; urgency=low
+
+  * New upstream release (0.8 RC3).
+  * No longer install outdated TODO file.
+  * debian/control
+    - Bump Build-Depends on libnm-* packages to (>= 0.7.999).
+    - Bump Build-Depends on libdbus-glib-1-dev to (>= 0.74).
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 23 Jan 2010 00:46:29 +0100
+
+network-manager-pptp (0.7.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control
+    - Bump build dependencies on nm packages to (>= 0.7.2).
+    - Bump Standards-Version to 3.8.3. No further changes.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 27 Nov 2009 10:32:39 +0100
+
+network-manager-pptp (0.7.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Standards-Version to 3.8.1. No further changes.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 16 Apr 2009 17:31:06 +0200
+
+network-manager-pptp (0.7.0.99-1) unstable; urgency=low
+
+  * New upstream release (0.7.1 rc3).
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 05 Mar 2009 13:40:27 +0100
+
+network-manager-pptp (0.7.0.97-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/01-dbus_policy.patch
+    - Removed, merged upstream.
+  * debian/patches/02-icon_name.patch
+    - Removed, merged upstream.
+  * debian/control
+    - Drop libgnomeui-dev from Build-Depends, no longer required.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 25 Feb 2009 10:52:47 +0100
+
+network-manager-pptp (0.7.0-2) experimental; urgency=low
+
+  * debian/control
+    - Wrap build dependencies.
+    - Bump build dependency on debhelper to (>= 7).
+  * debian/compat
+    - Bump to debhelper v7 compat mode.
+  * debian/patches/01-dbus_policy.patch
+    - Remove bare send_interface policy rules. (Closes: #510732)
+  * debian/rules
+    - Include gnome.mk cdbs class instead of autotools.mk.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 14 Feb 2009 15:18:46 +0100
+
+network-manager-pptp (0.7.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * debian/control
+    - Set Utopia Maintenance Team as Maintainer, add myself and Enrico to
+      Uploaders.
+    - Update Vcs-* fields.
+    - Add Homepage: field.
+    - Update build dependencies.
+    - Bump Standards-Version to 3.8.0. Add README.source as recommended by the
+      new policy.
+  * debian/rules
+    - Install plugins into /usr/lib/NetworkManager, so NetworkManager can find
+      them.
+  * debian/*.install
+    - Update accordingly.
+  * Switch patch management system to quilt.
+  * debian/patches/icon-name.patch
+    - Rename and refresh patch to apply cleanly.
+  * debian/{nm-ppp-starter.1,network-manager-pptp.manpages}
+    - Remove obsolete man page.
+  * debian/watch
+    - Add watch file which allows to track new upstream releases.
+  * debian/copyright
+    - Revised and updated.
+  * debian/network-manager-pptp.preinst
+    - Remove obsolete conffiles /etc/NetworkManager/VPN/nm-ppp-starter.name
+      and /etc/dbus-1/system.d/nm-ppp-starter.conf on upgrades. If they have
+      been locally modified, save them as .dpkg-bak.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 26 Dec 2008 18:24:20 +0100
+
+network-manager-pptp (0.6.5+svnhead2574+dfsg-2) unstable; urgency=low
+
+  * Added recommendation over nm-ppp-gnome (Closes: #484163)
+  * Install the .png icon (Closes: #474324)
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Sat, 28 Jun 2008 16:06:28 +0200
+
+network-manager-pptp (0.6.6+dfsg-2) experimental; urgency=low
+
+  * install binaries to /usr/lib/network-manager-pptp
+  * modified .name file to point to the correct path of binaries
+  * installed again the desktop file
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Tue, 08 Apr 2008 10:35:36 +0200
+
+network-manager-pptp (0.6.6+dfsg-1) experimental; urgency=low
+
+  * Fixed some omissions in the copyright file, thanks Thomas Viehmann
+    for spotting them.
+  * New upstream release
+  * Install the .png icon (Closes: #474324)
+  * Added some patches that have been (probably erroneously) removed from the
+    upstream:
+    - vi.po is not available and should not be compiled
+    - pppd plugin should not be installed in /usr/bin
+    - use ppp headers in /usr/include and not the local ones
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Thu, 03 Apr 2008 10:14:36 +0200
+
+network-manager-pptp (0.6.5+svnhead2574+dfsg-1) unstable; urgency=low
+
+  * Firs upload in Debian (Closes: #390708, #356944)
+  * Moved to CDBS to better handle autotools
+  * Added Vcs-Svn control field
+  * Split the package in the n-m-pptp and n-m-pptp-gnome
+  * Fixed copyright file and removed from the source package some files that
+    are not redistributable under the GPL license.
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Thu, 20 Mar 2008 19:05:53 +0100
+
+network-manager-pptp (0.6.5+svnhead2574-0ubuntu1) gutsy; urgency=low
+
+  * Due to misscomprehension with original maintainer, my previous svn
+    sync was a regression, as I synched with 0.6.5 branch while he did
+    with 0.7 beta and backported the sources for 0.6.x. Reverting the
+    packaging for the moment as we are late in the dev cycle to resync
+    from svn and get potentially something unstable.
+  * Applyed patch 01_no_icon.dpatch
+  * Removed network-manager-gnome dependency
+  * Added missing build-dep libnm-util-dev
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 15 Jun 2007 18:20:23 +0200
+
+network-manager-pptp (0.6.5+svn2595-0ubuntu1) gutsy; urgency=low
+
+  * New svn snapshot
+  * Fixes dependencies. Shouldn't depend on network-manager-gnome.
+  * Added missing build-dep libnm-util-dev according to new
+    network-manager
+  * Dropped obsolete patches
+  * Switched packaging to cdbs
+  * Build-deps on network-manager 0.6.5
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 15 Jun 2007 18:20:22 +0200
+
+network-manager-pptp (0.6.4+svn2574-0ubuntu1) gutsy; urgency=low
+
+  * New upstream release (fixes LP: #67881, LP: #80541).
+  * Fix properties dialog so an option is always selected. (fixes LP: #89120)
+  * Set NoDisplay=true in the .desktop file to hide spurious menu item
+    (fixes LP: #109856).
+  * Bump Standards-version to 3.7.2 and fix Maintainer: field in
+    debian/control.
+
+ -- Craig Box <craig@dubculture.co.nz>  Sun, 4 Jun 2007 11:18:03 +1200
+
+network-manager-pptp (0.6.3+cvs20060819-0ubuntu2) edgy; urgency=low
+
+  * Add mss field in VPN properties structure, and update documentation to
+    point out that this patch only applies to NM 0.6.2 (dapper).
+
+ -- Craig Box <craig@dubculture.co.nz>  Sun,  1 Oct 2006 16:04:54 +1300
+
+network-manager-pptp (0.6.3+cvs20060819-0ubuntu1) edgy; urgency=low
+
+  * Initial release.
+
+ -- Craig Box <craig@dubculture.co.nz>  Wed, 26 Oct 2006 21:06:54 +1200
