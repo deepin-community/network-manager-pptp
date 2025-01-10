@@ -24,12 +24,7 @@
 #include "nm-default.h"
 
 #include "nm-pptp-editor-plugin.h"
-
-#ifdef NM_VPN_OLD
-#include "nm-pptp-editor.h"
-#else
 #include "nm-utils/nm-vpn-plugin-utils.h"
-#endif
 
 #define PPTP_PLUGIN_NAME    _("Point-to-Point Tunneling Protocol (PPTP)")
 #define PPTP_PLUGIN_DESC    _("Compatible with Microsoft and other PPTP VPN servers.")
@@ -132,7 +127,6 @@ get_capabilities (NMVpnEditorPlugin *iface)
 	return NM_VPN_EDITOR_PLUGIN_CAPABILITY_NONE;
 }
 
-#ifndef NM_VPN_OLD
 static NMVpnEditor *
 _call_editor_factory (gpointer factory,
                       NMVpnEditorPlugin *editor_plugin,
@@ -144,28 +138,36 @@ _call_editor_factory (gpointer factory,
 	                                       connection,
 	                                       error);
 }
-#endif
 
 static NMVpnEditor *
 get_editor (NMVpnEditorPlugin *iface, NMConnection *connection, GError **error)
 {
+	gpointer gtk3_only_symbol;
+	GModule *self_module;
+	const char *editor;
+
 	g_return_val_if_fail (PPTP_IS_PLUGIN_UI (iface), NULL);
 	g_return_val_if_fail (NM_IS_CONNECTION (connection), NULL);
 	g_return_val_if_fail (!error || !*error, NULL);
 
-	{
-#ifdef NM_VPN_OLD
-		return nm_vpn_plugin_ui_widget_interface_new (connection, error);
-#else
-		return nm_vpn_plugin_utils_load_editor (NM_PLUGIN_DIR"/libnm-vpn-plugin-pptp-editor.so",
-		                                        "nm_vpn_editor_factory_pptp",
-		                                        _call_editor_factory,
-		                                        iface,
-		                                        connection,
-		                                        NULL,
-		                                        error);
-#endif
+
+	self_module = g_module_open (NULL, 0);
+	g_module_symbol (self_module, "gtk_container_add", &gtk3_only_symbol);
+	g_module_close (self_module);
+
+	if (gtk3_only_symbol) {
+		editor = "libnm-vpn-plugin-pptp-editor.so";
+	} else {
+		editor = "libnm-gtk4-vpn-plugin-pptp-editor.so";
 	}
+
+	return nm_vpn_plugin_utils_load_editor (editor,
+						"nm_vpn_editor_factory_pptp",
+						_call_editor_factory,
+						iface,
+						connection,
+						NULL,
+						error);
 }
 
 static void

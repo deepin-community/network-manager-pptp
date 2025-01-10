@@ -154,7 +154,7 @@ get_secrets (const char *vpn_uuid,
 		g_key_file_set_string (keyfile, UI_KEYFILE_GROUP, "Description", prompt);
 		g_key_file_set_string (keyfile, UI_KEYFILE_GROUP, "Title", _("Authenticate VPN"));
 
-		keyfile_add_entry_info (keyfile, NM_PPTP_KEY_PASSWORD, pw ? pw : "", _("Password:"), TRUE, allow_interaction);
+		keyfile_add_entry_info (keyfile, NM_PPTP_KEY_PASSWORD, pw ? pw : "", _("Password"), TRUE, allow_interaction);
 
 		keyfile_print_stdout (keyfile);
 		g_key_file_unref (keyfile);
@@ -171,6 +171,7 @@ get_secrets (const char *vpn_uuid,
 		return TRUE;
 	}
 
+	gtk_init (NULL, NULL);
 
 	dialog = (NMAVpnPasswordDialog *) nma_vpn_password_dialog_new (_("Authenticate VPN"), prompt, NULL);
 
@@ -245,10 +246,9 @@ main (int argc, char *argv[])
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	gtk_init (&argc, &argv);
-
 	context = g_option_context_new ("- pptp auth dialog");
 	g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
+	g_option_context_add_group (context, gtk_get_option_group (FALSE));
 	g_option_context_parse (context, &argc, &argv, NULL);
 	g_option_context_free (context);
 

@@ -1,2 +1,2 @@
-version=3
-https://download.gnome.org/sources/NetworkManager-pptp/([\d\.]+)/NetworkManager-pptp-(.*)\.tar\.xz
+version=4
+https://download.gnome.org/sources/NetworkManager-pptp/([\d\.]+)/NetworkManager-pptp-@ANY_VERSION@\.tar\.xz

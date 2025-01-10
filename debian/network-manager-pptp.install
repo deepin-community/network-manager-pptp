@@ -1,6 +1,6 @@
-usr/lib/pppd/*/*.so
-usr/lib/NetworkManager/VPN/nm-pptp-service.name
-usr/lib/NetworkManager/nm-pptp-service
+usr/libexec/nm-pptp-service
 usr/lib/*/NetworkManager/libnm-vpn-plugin-pptp.so
+usr/lib/NetworkManager/VPN/nm-pptp-service.name
+usr/lib/pppd/*/*.so
 usr/share/dbus-1/
 usr/share/locale/
